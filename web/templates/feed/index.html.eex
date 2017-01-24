@@ -1,0 +1,41 @@
+<script>
+  function addPost(post) {     
+
+  }
+
+</script>
+
+
+<div class="jumbotron">
+  <h2>Hello <%= @user %>, Welcome to your profile</h2>
+
+
+  <a href="../login">Logout</a>
+</div>
+
+
+<div>
+  Post:
+  <br>
+  <input type="text" id="post" name="post"/>
+  <button onclick="addPost('post')">Send</button>
+    
+</div>
+
+
+
+<div class="jumbotron">
+  <div>
+    <h3>Post</h3>
+  </div>
+
+  <div>
+    <h5>Message</h5>
+  </div>
+
+  <ul id="posts">
+
+
+  </ul>
+  
+</div>

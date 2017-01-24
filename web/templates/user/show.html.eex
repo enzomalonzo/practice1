@@ -1,0 +1,43 @@
+<script>
+ function addStatus(status) {
+ 	var list = document.getElementById('feed');
+ 	var li = document.createElement('li');
+
+ 	li.innerHTML = status;
+
+ 	list.appendChild(li);
+ }
+</script>
+
+
+<h2>Show user</h2>
+
+<ul>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </li>
+
+  <li>
+    <strong>Password:</strong>
+    <%= @user.password %>
+  </li>
+
+</ul>
+
+<form>
+	Status: <input type="text" id="entry" name="entry">
+</form>
+<button onclick="addStatus(document.getElementById('entry').value)">Post</button>
+
+<br>
+
+<ul id=feed>
+</ul>
+
+<br><br>
+
+
+<%= link "Edit ", to: user_path(@conn, :edit, @user) %> 
+<%= link "Back", to: user_path(@conn, :index) %>

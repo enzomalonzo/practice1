@@ -1,0 +1,18 @@
+<h2>Show login</h2>
+
+<ul>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @login.username %>
+  </li>
+
+  <li>
+    <strong>Password:</strong>
+    <%= @login.password %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: login_path(@conn, :edit, @login) %>
+<%= link "Back", to: login_path(@conn, :index) %>
