@@ -21,8 +21,29 @@ defmodule HelloPhoenix.Router do
     get "/hello/:messenger", HelloController, :show
     get "/feed/:user", FeedController, :index     
 
-    resources "/users", UserController
+    # Public Login Route
+    get "/sign_in", SessionController, :new
+    post "/sign_in", SessionController, :create
+
+    get "/dashboard", DashboardController, :index
+
+    get "/posts/new", PostController, :new
+    post "/posts/new", PostController, :create
+
+    get "/posts", PostController, :index
+
+    # TODO: Add here route for registration controller
+    # get "/register", RegistrationController, :new
+    # post "/register", RegistrationController, :create
+
+    resources "/users", UserController # User Management for Admin
     resources "/login", LoginController
+
+    # RESOURCES:
+    # get "/login", LoginContrller, :new
+    # post "/login", LoginContrller, :creat
+    # get "/edit", LoginContrller, :edit
+    # put "/edit", LoginContrller, :update
 
   end
 

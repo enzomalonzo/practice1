@@ -2,7 +2,8 @@ defmodule HelloPhoenix.Post do
   use HelloPhoenix.Web, :model
 
   schema "posts" do
-    field :entry, :string
+    field :status, :string
+
     belongs_to :user, HelloPhoenix.User
 
     timestamps()
@@ -13,8 +14,7 @@ defmodule HelloPhoenix.Post do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:username])
-    |> validate_required([:username])
-    
+    |> cast(params, [:user_id, :status])
+    |> validate_required([:user_id, :status])
   end
 end

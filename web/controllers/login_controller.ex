@@ -14,6 +14,7 @@ defmodule HelloPhoenix.LoginController do
   end
 
   def create(conn, %{"login" => login_params}) do
+    raise login_params
     changeset = Login.changeset(%Login{}, login_params)
 
     case Repo.insert(changeset) do

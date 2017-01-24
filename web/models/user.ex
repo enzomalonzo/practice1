@@ -4,7 +4,7 @@ defmodule HelloPhoenix.User do
   schema "users" do
     field :username, :string
     field :password, :string
-    
+
     has_many :posts, HelloPhoenix.Post
 
     timestamps()
